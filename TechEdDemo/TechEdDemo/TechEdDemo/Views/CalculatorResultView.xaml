@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+					   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+					   x:Class="TechEdDemo.Views.CalculatorResultView">
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness">
+      <OnPlatform.iOS>
+        0, 20, 0, 0
+      </OnPlatform.iOS>
+      <OnPlatform.Android>
+        0, 0, 0, 0
+      </OnPlatform.Android>
+      <OnPlatform.WinPhone>
+        0, 0, 0, 0
+      </OnPlatform.WinPhone>
+    </OnPlatform>
+  </ContentPage.Padding>
+  <StackLayout Padding ="5">
+
+    <Label Font="Large" Text="Loan Repayment"/>
+    <StackLayout Padding="5">
+      <Label Text="{Binding LoanRepaymentPeriod}" BackgroundColor="Lime" XAlign="Center" YAlign="Center"/>
+      <Label Text="Loan Repayment Period" BackgroundColor="Lime" XAlign="Center" YAlign="Center"/>
+    </StackLayout>
+    <Label Text="Loan Amount ($)" ></Label>
+    <Label  Text="{Binding LoanAmount}" TextColor="Purple"/>
+    <Label Text="Monthly Installment Amount ($)" ></Label>
+    <Label Text="{Binding MonthlyInstallment}" TextColor="Purple"/>
+    <Label Text="Interest Rate (% pa)" ></Label>
+    <Label Text="{Binding InterestRate}" TextColor="Purple"/>
+  </StackLayout>
+</ContentPage>

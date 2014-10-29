@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+					   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+					   x:Class="TechEdDemo.Views.CalculatorView">
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness">
+      <OnPlatform.iOS>
+        0, 20, 0, 0
+      </OnPlatform.iOS>
+      <OnPlatform.Android>
+        0, 0, 0, 0
+      </OnPlatform.Android>
+      <OnPlatform.WinPhone>
+        0, 0, 0, 0
+      </OnPlatform.WinPhone>
+    </OnPlatform>
+  </ContentPage.Padding>
+  <StackLayout Padding ="5">
+    <Label Font="Large" Text="Loan Repayment"/>
+    <Label Font="Micro" Text="This calculator computes how long it would take to replay a loan. Vary the inputs to see how the result changes (e.g. increasing the monthly installment)"/>
+    <Label Text="Loan Amount ($)"></Label>
+    <Entry  Text="{Binding LoanAmount, Mode=TwoWay}"/>
+    <Label Text="Monthly Installment Amount ($)" ></Label>
+    <Entry Text="{Binding MonthlyInstallment, Mode=TwoWay}"/>
+    <Label Text="Interest Rate (% pa)" ></Label>
+    <Entry Text="{Binding InterestRate, Mode=TwoWay}"/>
+    <Button Command="{Binding CalculateCommand}" Text="Calculate"/>
+    <Button Command="{Binding ResetCommand}" Text="Reset"/>
+  </StackLayout>
+</ContentPage>
